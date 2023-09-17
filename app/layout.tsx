@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Nunito } from 'next/font/google';
 import Navbar from './components/navbar/Navbar';
 import ClientOnly from './components/ClientOnly';
+import Footer from './components/footer/Footer';
 
 const font = Nunito({
   subsets: ['latin'],
@@ -15,10 +16,13 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='en'>
-      <ClientOnly>
-        <Navbar />
-      </ClientOnly>
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+        <ClientOnly>
+          <Navbar />
+        </ClientOnly>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 };
