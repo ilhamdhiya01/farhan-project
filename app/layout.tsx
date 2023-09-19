@@ -3,6 +3,8 @@ import { Nunito } from 'next/font/google';
 import Navbar from './components/navbar/Navbar';
 import ClientOnly from './components/ClientOnly';
 import Footer from './components/footer/Footer';
+import Sidebar from './components/sidebar/Sidebar';
+import FixedButton from './components/FixedButton';
 
 const font = Nunito({
   subsets: ['latin'],
@@ -19,6 +21,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body className={font.className}>
         <ClientOnly>
           <Navbar />
+          <Sidebar />
+          <FixedButton />
         </ClientOnly>
         {children}
         <Footer />
