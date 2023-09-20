@@ -1,3 +1,4 @@
+'use client';
 import FooterLabel from './FooterLabel';
 
 const AboutUs = () => {

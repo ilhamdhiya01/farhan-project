@@ -1,3 +1,4 @@
+'use client';
 import { AiOutlineMail } from 'react-icons/ai';
 import FooterLabel from './FooterLabel';
 

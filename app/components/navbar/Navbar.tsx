@@ -10,7 +10,6 @@ import { useSidebar } from '@/app/hooks/useSidebar';
 const Navbar = () => {
   const { onOpen, isOpen } = useSidebar();
   const [scrolled, setScroled] = useState(false);
-  const [active, setActive] = useState(false);
 
   const handleScroll = () => {
     if (window.scrollY > 160) {
@@ -19,9 +18,6 @@ const Navbar = () => {
     if (window.scrollY == 0) {
       setScroled(false);
     }
-  };
-  const test = () => {
-    setActive(!active);
   };
 
   useEffect(() => {

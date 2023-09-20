@@ -1,15 +1,15 @@
 import { create } from 'zustand';
 
-interface SidebarState {
+type SidebarState = {
   isOpen: boolean;
-}
+};
 
-interface SidebarAction {
+type SidebarAction = {
   onOpen: () => void;
   onClose: () => void;
-}
+};
 
-interface SidebarStore extends SidebarState, SidebarAction {}
+type SidebarStore = SidebarState & SidebarAction;
 
 const initialValue: SidebarState = {
   isOpen: false,

@@ -1,11 +1,15 @@
 'use client';
+
+import Image from 'next/image';
+import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
+import CarouselNavigation from './CarouselNavigation';
 
 const images = [
   {
@@ -31,21 +35,47 @@ const images = [
 ];
 
 const Carousel = () => {
+  const [state, setState] = useState({
+    activeIndex: 0,
+    isEnd: false,
+  });
   const pagination = {
     clickable: true,
     renderBullet: function (index: number, className: string) {
       return '<span class="' + className + '"></span>';
     },
   };
+  const handleNavigation = (index: number, isEnd: boolean) => {
+    setState((prev) => ({
+      ...prev,
+      activeIndex: index,
+      isEnd: isEnd,
+    }));
+  };
   return (
-    <div>
-      <Swiper pagination={pagination} modules={[Pagination]} spaceBetween={0} slidesPerView={1} onSlideChange={() => console.log('slide change')} onSwiper={(swiper) => console.log(swiper)}>
+    <div className='w-full overflow-hidden md:h-[235px] relative'>
+      <CarouselNavigation isEnd={state.isEnd} index={state.activeIndex} />
+      <Swiper
+        navigation={{
+          enabled: true,
+          nextEl: '.swiper-button-prev',
+          prevEl: '.swiper-button-next',
+        }}
+        pagination={pagination}
+        modules={[Pagination, Navigation]}
+        spaceBetween={0}
+        slidesPerView={1}
+        onSlideChange={(swiper) => handleNavigation(swiper.activeIndex, swiper.isEnd)}
+        // onSwiper={(swiper) => console.log(swiper.isEnd)}
+        className='w-full h-full'
+      >
         {images.map((image) => (
           <SwiperSlide key={image.imageAlt}>
-            <img src={image.imageUrl} alt={image.imageAlt} key={image.imageAlt} className='w-full  object-cover' />
+            <Image key={image.imageAlt} src={image.imageUrl} alt={image.imageAlt} width={100} height={100} className='w-full  object-cover' />
           </SwiperSlide>
         ))}
       </Swiper>
+      <div></div>
     </div>
   );
 };

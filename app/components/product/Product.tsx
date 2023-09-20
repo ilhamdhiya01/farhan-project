@@ -23,14 +23,14 @@ const products = [
   },
   {
     image: '/images/image5.jpg',
-    name: 'Meetp Processing Equipment',
+    name: 'Meetp Processing',
     total: 125,
   },
 ];
 
 const Product = () => {
   return (
-    <div className='grid grid-cols-2 gap-4'>
+    <div className='grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6'>
       {products.map((product) => (
         <Card key={product.name} {...product} />
       ))}

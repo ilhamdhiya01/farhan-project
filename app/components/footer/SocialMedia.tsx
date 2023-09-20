@@ -1,3 +1,5 @@
+'use client';
+
 import SocialMediaItem from './SocialMediaItem';
 import { ImFacebook } from 'react-icons/im';
 import { BsInstagram, BsTwitter, BsLinkedin } from 'react-icons/bs';

@@ -1,5 +1,6 @@
-import SuperiorityItem from './SuperiorityItem';
+'use client';
 
+import SuperiorityItem from './SuperiorityItem';
 const superiority = [
   {
     image: '/images/icon-best-deal-120.jpg',

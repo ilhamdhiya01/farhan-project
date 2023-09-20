@@ -1,4 +1,5 @@
 'use clinet';
+
 import BannerLink from './BannerLink';
 import Carousel from './Carousel';
 const Banner = () => {
