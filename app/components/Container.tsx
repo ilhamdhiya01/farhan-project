@@ -4,7 +4,8 @@ const Container: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <div
       className='
         max-w-[2520px] 
-        mx-auto xl:px-20
+        mx-auto 
+        xl:px-36
         md:px-4
         sm:px-2
         px-4

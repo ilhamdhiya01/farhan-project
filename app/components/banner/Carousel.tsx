@@ -53,7 +53,7 @@ const Carousel = () => {
     }));
   };
   return (
-    <div className='w-full overflow-hidden md:h-[235px] relative'>
+    <div className='w-full overflow-hidden md:h-[235px] xl:h-[382px] relative'>
       <CarouselNavigation isEnd={state.isEnd} index={state.activeIndex} />
       <Swiper
         navigation={{

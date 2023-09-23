@@ -6,18 +6,15 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import Container from '../Container';
 import Logo from './Logo';
 import { useSidebar } from '@/app/hooks/useSidebar';
+import MenuItem from '../sidebar/MenuItem';
 
 const Navbar = () => {
-  const { onOpen, isOpen } = useSidebar();
+  const { onOpen } = useSidebar();
   const [scrolled, setScroled] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY > 160) {
-      setScroled(true);
-    }
-    if (window.scrollY == 0) {
-      setScroled(false);
-    }
+    if (window.scrollY > 160) setScroled(true);
+    if (window.scrollY == 0) setScroled(false);
   };
 
   useEffect(() => {
@@ -31,8 +28,11 @@ const Navbar = () => {
     return (
       <Container>
         <div className='flex flex-row justify-between items-center'>
-          <AiOutlineMenu onClick={onOpen} size={20} />
+          <AiOutlineMenu onClick={onOpen} size={20} className='xl:hidden' />
           <Logo />
+          <div className='hidden xl:flex justify-end w-full px-4'>
+            <MenuItem />
+          </div>
           <BiSearch size={20} />
         </div>
       </Container>
