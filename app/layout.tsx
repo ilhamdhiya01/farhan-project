@@ -1,3 +1,4 @@
+import './globals.css';
 import type { Metadata } from 'next';
 import { Nunito } from 'next/font/google';
 import Navbar from './components/navbar/Navbar';
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='en'>
-      <body className={font.className}>
+      <body className={`${font.className} className='w-full min-h-screen box-border'`}>
         <ClientOnly>
           <Navbar />
           <Sidebar />

@@ -5,7 +5,7 @@ const Container: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       className='
         max-w-[2520px] 
         mx-auto 
-        xl:px-36
+        xl:px-32
         md:px-4
         sm:px-2
         px-4

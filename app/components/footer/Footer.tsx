@@ -7,16 +7,16 @@ import Superiority from './Superiority';
 
 const Footer = () => {
   return (
-    <footer className='bg-black md:py-6'>
+    <footer className='bg-black'>
       <Container>
-        <div className='grid grid-cols-1 md:grid-cols-2 md:gap-4'>
-          <div>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:gap-4 xl:gap-7 md:pt-6'>
+          <div className='md:pb-6'>
             <Information />
           </div>
-          <div className='md:order-3 md:col-span-2'>
+          <div className='md:order-3 xl:order-2 md:col-span-2 xl:col-span-1 xl:border-r xl:border-neutral-700/90 xl:pr-7'>
             <Superiority />
           </div>
-          <div className='md:order-2'>
+          <div className='md:order-2 xl:order-3'>
             <Payment />
             <Location />
           </div>
