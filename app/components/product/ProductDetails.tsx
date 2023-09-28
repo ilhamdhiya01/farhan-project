@@ -4,7 +4,8 @@ import Link from 'next/link';
 import Container from '../Container';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import Image from 'next/image';
-import { Product, Specification } from '@/app/data/products';
+import { Product } from '@/app/data/products';
+import ProductSpecification from './ProductSpecification';
 
 const BreadCrumbs = () => (
   <ul className='flex items-center gap-6'>
@@ -33,41 +34,6 @@ const Navigation = () => (
     </div>
     <div className='w-8 h-8 border-2 border-[#c0c0c0] rounded-full text-[#c0c0c0] flex justify-center items-center'>
       <FiChevronRight />
-    </div>
-  </div>
-);
-
-const Specification: React.FC<{ specification: Specification | undefined }> = ({ specification }) => (
-  <div className='flex flex-col gap-2 text-sm lg:text-base mt-3'>
-    <div className='grid grid-cols-3 gap-2 border-b pb-1'>
-      <div>Type</div>
-      <div className='text-end pr-2'>:</div>
-      <div>{specification?.type}</div>
-    </div>
-    <div className='grid grid-cols-3 gap-2 border-b pb-1'>
-      <div>Daya Listrik</div>
-      <div className='text-end pr-2'>:</div>
-      <div>{specification?.dayaListrik}</div>
-    </div>
-    <div className='grid grid-cols-3 gap-2 border-b pb-1'>
-      <div>Kapasitas</div>
-      <div className='text-end pr-2'>:</div>
-      <div>{specification?.kapasitas}</div>
-    </div>
-    <div className='grid grid-cols-3 gap-2 border-b pb-1'>
-      <div>Voltase</div>
-      <div className='text-end pr-2'>:</div>
-      <div>{specification?.voltase}</div>
-    </div>
-    <div className='grid grid-cols-3 gap-2 border-b pb-1'>
-      <div>Berat</div>
-      <div className='text-end pr-2'>:</div>
-      <div>{specification?.berat}</div>
-    </div>
-    <div className='grid grid-cols-3 gap-2 border-b pb-1'>
-      <div>Dimensi</div>
-      <div className='text-end pr-2'>:</div>
-      <div>{specification?.dimensi}</div>
     </div>
   </div>
 );
@@ -104,7 +70,9 @@ const ProductDetails: React.FC<ProductDetailProps> = ({ product }) => {
             </div>
             <div className='mt-5'>
               <h2 className='text-xl lg:text-2xl font-bold'>Spesifikasi :</h2>
-              <Specification specification={product?.specification} />
+              <div className='flex flex-col gap-2 text-sm lg:text-base mt-3'>
+                <ProductSpecification spec={product?.specification} />
+              </div>
             </div>
           </div>
         </div>
