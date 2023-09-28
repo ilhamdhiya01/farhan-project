@@ -1,7 +1,9 @@
 import Container from '../components/Container';
 import ProductItem from '../components/product/ProductItem';
 import { products } from '../data/products';
-
+export const metadata = {
+  title: 'Product',
+};
 const page = () => {
   return (
     <>

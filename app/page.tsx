@@ -1,3 +1,5 @@
+'use client';
+import { Metadata } from 'next';
 import Banner from './components/banner/Banner';
 import Container from './components/Container';
 import SectionLabel from './components/SectionLabel';

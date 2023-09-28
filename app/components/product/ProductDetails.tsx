@@ -4,8 +4,9 @@ import Link from 'next/link';
 import Container from '../Container';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import Image from 'next/image';
-import { Product } from '@/app/data/products';
+import { Product, products } from '@/app/data/products';
 import ProductSpecification from './ProductSpecification';
+import RelatedProducts from './RelatedProducts';
 
 const BreadCrumbs = () => (
   <ul className='flex items-center gap-6'>
@@ -15,14 +16,12 @@ const BreadCrumbs = () => (
       </Link>
     </li>
     <li className='uppercase font-semibold text-[#666666b2] relative after:content-[""] after:w-[0.5px] after:h-[15px] after:last:w-0 after:last:h-0 after:rotate-[28deg] after:bg-[#222222] after:absolute after:-right-3 after:top-1'>
-      <Link href={`/`}>
+      <Link href={`/product`}>
         <span>all brands</span>
       </Link>
     </li>
     <li className='uppercase font-semibold text-[#666666b2] relative after:content-[""] after:w-[0.5px] after:h-[15px] after:last:w-0 after:last:h-0 after:rotate-[28deg] after:bg-[#222222] after:absolute after:-right-3 after:top-1'>
-      <Link href={`/`}>
-        <span>product-1</span>
-      </Link>
+      <span>product-1</span>
     </li>
   </ul>
 );
@@ -43,6 +42,7 @@ type ProductDetailProps = {
 };
 
 const ProductDetails: React.FC<ProductDetailProps> = ({ product }) => {
+  const relatedProduct = products.filter((item) => item.category === product?.category && item.slug !== product.slug);
   return (
     <div className='w-full'>
       <Container>
@@ -74,6 +74,9 @@ const ProductDetails: React.FC<ProductDetailProps> = ({ product }) => {
                 <ProductSpecification spec={product?.specification} />
               </div>
             </div>
+          </div>
+          <div className='mt-20 border-t pt-4'>
+            <RelatedProducts products={relatedProduct} />
           </div>
         </div>
       </Container>
