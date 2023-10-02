@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import './style.css';
 
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
@@ -66,7 +67,6 @@ const Carousel = () => {
         spaceBetween={0}
         slidesPerView={1}
         onSlideChange={(swiper) => handleNavigation(swiper.activeIndex, swiper.isEnd)}
-        // onSwiper={(swiper) => console.log(swiper.isEnd)}
         className='w-full h-full'
       >
         {images.map((image) => (

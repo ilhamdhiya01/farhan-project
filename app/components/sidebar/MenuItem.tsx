@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useSidebar } from '@/app/hooks/useSidebar';
 
 const menus = [
   {
@@ -24,7 +25,7 @@ const menus = [
 
 const MenuItem = () => {
   const pathname = usePathname();
-  console.log(pathname);
+  const { onClose } = useSidebar();
   return (
     <>
       <ul className='hidden xl:flex items-center gap-4'>
@@ -36,7 +37,7 @@ const MenuItem = () => {
       </ul>
       <ul className='xl:hidden'>
         {menus.map((menu, index) => (
-          <Link key={index} href={menu.link} className='block'>
+          <Link key={index} href={menu.link} className='block' onClick={onClose}>
             <li className='py-4 px-5 uppercase font-bold text-white border-b border-neutral-700 text-xs hover:bg-neutral-500 cursor-pointer transition duration-200'>{menu.name}</li>
           </Link>
         ))}
