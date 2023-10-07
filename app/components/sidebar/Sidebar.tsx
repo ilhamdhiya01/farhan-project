@@ -50,7 +50,7 @@ const Sidebar = () => {
             duration-300
             h-full
             w-64
-            ${isOpen ? 'translate-x-0' : '-translate-x-64'}
+            ${isOpen ? 'translate-x-0' : '-translate-x-full'}
             `}
           >
             <div

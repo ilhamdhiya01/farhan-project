@@ -71,7 +71,7 @@ const Carousel = () => {
       >
         {images.map((image) => (
           <SwiperSlide key={image.imageAlt}>
-            <Image key={image.imageAlt} src={image.imageUrl} alt={image.imageAlt} width={100} height={100} className='w-full  object-cover' />
+            <Image key={image.imageAlt} src={image.imageUrl} alt={image.imageAlt} width={500} height={500} className='w-full  object-cover' />
           </SwiperSlide>
         ))}
       </Swiper>

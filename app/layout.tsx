@@ -6,6 +6,8 @@ import ClientOnly from './components/ClientOnly';
 import Footer from './components/footer/Footer';
 import Sidebar from './components/sidebar/Sidebar';
 import FixedButton from './components/FixedButton';
+import QuickViewModal from './components/modal/QuickViewModal';
+import GaleryOverviewModal from './components/modal/GaleryOverviewModal';
 
 const font = Nunito({
   subsets: ['latin'],
@@ -25,6 +27,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           <Navbar />
           <Sidebar />
           <FixedButton />
+          <QuickViewModal />
+          <GaleryOverviewModal />
         </ClientOnly>
         {children}
         <Footer />

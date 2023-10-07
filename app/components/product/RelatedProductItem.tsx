@@ -12,7 +12,7 @@ const RelatedProductItem: React.FC<RelatedProductItemProps> = ({ category, image
     <Link href={`/product/${slug}`}>
       <div className='group overflow-hidden bg-white md:h-[265px]'>
         <div className='h-32 md:h-[185px] overflow-hidden'>
-          <Image src={image} alt={name} width={100} height={100} className='object-cover transition scale-100 duration-300 group-hover:scale-110  w-full h-full' />
+          <Image src={image} alt={name} width={500} height={500} className='object-cover transition scale-100 duration-300 group-hover:scale-110  w-full h-full' />
         </div>
         <div className='p-2 flex flex-col gap-1'>
           <h2 className='text-[10px] uppercase md:text-xs'>{category}</h2>

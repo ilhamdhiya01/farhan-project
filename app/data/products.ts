@@ -7,13 +7,22 @@ export type Product = {
   description?: string;
   specification?: string;
 };
-const createSlug = (name: string) => {
+export const createSlug = (name: string) => {
   return name
     .replace(/[^\w\s]/g, '')
     .replace(/\s+/g, '-')
     .toLowerCase();
 };
 export const products: Product[] = [
+  {
+    image: '/images/meja2.jpeg',
+    name: 'S/s Working Table with Drawers Getra',
+    slug: createSlug('S/s Working Table with Drawers Getra'),
+    category: 'Meja Stainless',
+    stock: 60,
+    description: 'Kombinasi deck oven dengan proofer lebih praktis dan menghemat tempat, Oven dioperasikan menggunakan gas LPG sedangkan Proofer menggunakan tenaga listrik.',
+    specification: 'Dimensi : 210 x 70 x (85+10) cm | Dimensi Bowl : 80 x 50 x 30 cm | Material : Full Stainless Steel',
+  },
   {
     image: '/images/oven1.jpeg',
     name: 'Electric Baking Oven ED-36 Getra',
@@ -60,6 +69,15 @@ export const products: Product[] = [
     specification: 'Model & Tipe	:	RFL-24SS+FJ-10 | Voltase	:	220-240V | Frekuensi	:	50/60 Hz | Bahan Bakar Utama	:	Gas LPG 2 x 2.2 BTU | Daya Listrik	:	1000 Watt | Kapasitas Oven	:	2 Deck 4 Loyang | Bahan Bakar Utama	:	Gas LPG | Material	:	Besi Cor + Stainless Steel | Berat	:	64.5 Kg | Dimensi	:	650 mm x 610 mm x 750 mm',
   },
   {
+    image: '/images/meja3.jpeg',
+    name: 'Working Table Stainless Steel WK-180',
+    slug: createSlug('Working Table Stainless Steel WK-180'),
+    category: 'Meja Stainless',
+    stock: 60,
+    description: 'Kombinasi deck oven dengan proofer lebih praktis dan menghemat tempat, Oven dioperasikan menggunakan gas LPG sedangkan Proofer menggunakan tenaga listrik.',
+    specification: 'Model & Tipe	:	RFL-24SS+FJ-10 | Voltase	:	220-240V | Frekuensi	:	50/60 Hz | Bahan Bakar Utama	:	Gas LPG 2 x 2.2 BTU | Daya Listrik	:	1000 Watt | Kapasitas Oven	:	2 Deck 4 Loyang | Bahan Bakar Utama	:	Gas LPG',
+  },
+  {
     image: '/images/kitchen-set2.jpeg',
     name: 'Deck RFL-24SS+FJ-10',
     slug: createSlug('Deck RFL-24SS+FJ-10'),
@@ -103,24 +121,6 @@ export const products: Product[] = [
     stock: 60,
     description: 'Kombinasi deck oven dengan proofer lebih praktis dan menghemat tempat, Oven dioperasikan menggunakan gas LPG sedangkan Proofer menggunakan tenaga listrik.',
     specification: 'Model & Tipe	:	RFL-24SS+FJ-10 | Dimensi : 180x70x85 Cm | Material : Full Stainless Steel',
-  },
-  {
-    image: '/images/meja2.jpeg',
-    name: 'S/s Working Table with Drawers Getra',
-    slug: createSlug('S/s Working Table with Drawers Getra'),
-    category: 'Meja Stainless',
-    stock: 60,
-    description: 'Kombinasi deck oven dengan proofer lebih praktis dan menghemat tempat, Oven dioperasikan menggunakan gas LPG sedangkan Proofer menggunakan tenaga listrik.',
-    specification: 'Dimensi : 210 x 70 x (85+10) cm | Dimensi Bowl : 80 x 50 x 30 cm | Material : Full Stainless Steel',
-  },
-  {
-    image: '/images/meja3.jpeg',
-    name: 'Working Table Stainless Steel WK-180',
-    slug: createSlug('Working Table Stainless Steel WK-180'),
-    category: 'Meja Stainless',
-    stock: 60,
-    description: 'Kombinasi deck oven dengan proofer lebih praktis dan menghemat tempat, Oven dioperasikan menggunakan gas LPG sedangkan Proofer menggunakan tenaga listrik.',
-    specification: 'Model & Tipe	:	RFL-24SS+FJ-10 | Voltase	:	220-240V | Frekuensi	:	50/60 Hz | Bahan Bakar Utama	:	Gas LPG 2 x 2.2 BTU | Daya Listrik	:	1000 Watt | Kapasitas Oven	:	2 Deck 4 Loyang | Bahan Bakar Utama	:	Gas LPG',
   },
   {
     image: '/images/meja4.jpeg',

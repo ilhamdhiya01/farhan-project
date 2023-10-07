@@ -9,7 +9,7 @@ const About = () => {
           <p>Selamat datang di Jaya Mesin - Tempat Terbaik untuk Kepuasan Dapur Anda! Di Jaya Mesin, kami percaya bahwa dapur adalah hati dari setiap rumah, restoran, kafe, dan bisnis kuliner. Dapur adalah tempat di mana kreasi kuliner bermula, ide-ide lezat menjadi kenyataan, dan makanan lezat menjadi kenangan. Kami berkomitmen untuk membantu Anda menciptakan pengalaman memasak yang tak terlupakan dengan menyediakan peralatan dapur berkualitas tinggi dan peralatan bisnis yang inovatif.</p>
         </div>
         <div className=''>
-          <Image src={'/images/about1.svg'} alt='about 1' width={100} height={100} className='w-full h-full md:w-4/5 md:h-4/5 object-cover' />
+          <Image src={'/images/about1.svg'} alt='about 1' width={500} height={500} className='w-full h-full md:w-4/5 md:h-4/5 object-cover' />
         </div>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-0'>
@@ -36,7 +36,7 @@ const About = () => {
           </div>
         </div>
         <div className='w-full h-full overflow-hidden'>
-          <Image width={100} height={100} src={'/images/about2.svg'} alt='about 1' className='w-full h-full md:w-4/5 md:h-4/5 object-cover aspect-square md:order-1' />
+          <Image width={500} height={500} src={'/images/about2.svg'} alt='about 1' className='w-full h-full md:w-4/5 md:h-4/5 object-cover aspect-square md:order-1' />
         </div>
       </div>
     </div>

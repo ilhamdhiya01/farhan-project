@@ -21,7 +21,7 @@ type NavigationProps = {
   index: number;
 };
 
-const BreadCrumbs: React.FC<{ category: string | undefined }> = ({ category }) => (
+const BreadCrumbs: React.FC<{ category: string | undefined; slug: string | undefined }> = ({ category, slug }) => (
   <ul className='flex items-center gap-6'>
     <li className='uppercase font-semibold text-[#666666b2] relative after:content-[""] after:w-[0.5px] after:h-[15px] after:last:w-0 after:last:h-0 after:rotate-[28deg] after:bg-[#222222] after:absolute after:-right-3 after:top-1'>
       <Link href={`/`}>
@@ -34,7 +34,7 @@ const BreadCrumbs: React.FC<{ category: string | undefined }> = ({ category }) =
       </Link>
     </li>
     <li className='uppercase font-semibold text-[#666666b2] relative after:content-[""] after:w-[0.5px] after:h-[15px] after:last:w-0 after:last:h-0 after:rotate-[28deg] after:bg-[#222222] after:absolute after:-right-3 after:top-1'>
-      <Link href={`/product`}>
+      <Link href={`/product/${slug}`}>
         <span>{category}</span>
       </Link>
     </li>
@@ -86,12 +86,12 @@ const ProductDetails: React.FC<ProductDetailProps> = ({ product, indexProduct })
       <Container>
         <div className='pt-4 pb-6'>
           <div className='flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-2'>
-            <BreadCrumbs category={navigationProduct?.category} />
+            <BreadCrumbs category={navigationProduct?.category} slug={navigationProduct?.slug} />
             <Navigation index={currentIndexProduct} handlePrev={handlePrevNavigation} handleNext={handleNextNavigation} />
           </div>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-5 mt-5 pb-5 border-b'>
             <div className='w-full h-[300px] overflow-hidden'>
-              <Image src={navigationProduct?.image} alt='image-detail' width={100} height={100} className='object-cover w-full h-full' />
+              <Image src={navigationProduct?.image} alt='image-detail' width={500} height={500} className='object-cover w-full h-full' />
             </div>
             <div className='flex flex-col gap-2'>
               <h2 className='text-2xl lg:text-3xl font-bold relative after:content-[""] after:block after:w-9 after:h-[3px] after:bg-gray-300 after:rounded-full after:my-2'>{navigationProduct?.name}</h2>
