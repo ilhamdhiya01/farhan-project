@@ -1,5 +1,6 @@
 'use client';
 import { useEffect } from 'react';
+import ModalNavigation from './ModalNavigation';
 
 type ModalProps = {
   content: React.ReactElement;
@@ -9,7 +10,7 @@ type ModalProps = {
   onClose: () => void;
 };
 
-const Modal: React.FC<ModalProps> = ({ content, isOpen, onClose }) => {
+const Modal: React.FC<ModalProps> = ({ content, isOpen, onClose, navigation }) => {
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('overflow-hidden');
@@ -40,6 +41,7 @@ const Modal: React.FC<ModalProps> = ({ content, isOpen, onClose }) => {
         ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}
       `}
       >
+        {navigation && <ModalNavigation />}
         <div
           className='
           relative

@@ -13,7 +13,7 @@ const ImageGaleryItem: React.FC<{ image: string }> = ({ image }) => {
   }, [image, onOpen]);
 
   return (
-    <div onClick={handleShowImage} className='overflow-hidden relative rounded-lg cursor-pointer'>
+    <div onClick={handleShowImage} className='overflow-hidden relative rounded-lg cursor-zoom-in'>
       <Image src={image} alt='Galery Item' width={500} height={500} className='w-full h-full object-cover' />
     </div>
   );
