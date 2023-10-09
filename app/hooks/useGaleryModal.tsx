@@ -2,25 +2,25 @@ import { create } from 'zustand';
 
 type GaleryModalState = {
   isOpen: boolean;
-  galery: string;
+  imageIndex: number;
 };
 
 type GaleryModalAction = {
   onOpen: () => void;
   onClose: () => void;
-  setImage: (data: string) => void;
+  setImageIndex: (data: number) => void;
 };
 
 type GaleryModalStore = GaleryModalState & GaleryModalAction;
 
 const initialValue: GaleryModalState = {
   isOpen: false,
-  galery: '',
+  imageIndex: 0,
 };
 
 export const useGaleryModal = create<GaleryModalStore>((set) => ({
   ...initialValue,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
-  setImage: (data) => set({ galery: data }),
+  setImageIndex: (data) => set({ imageIndex: data }),
 }));

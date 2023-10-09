@@ -7,10 +7,11 @@ type ModalProps = {
   isOpen: boolean;
   navigation?: boolean;
   closeButton?: boolean;
+  modalType: string;
   onClose: () => void;
 };
 
-const Modal: React.FC<ModalProps> = ({ content, isOpen, onClose, navigation }) => {
+const Modal: React.FC<ModalProps> = ({ content, isOpen, onClose, navigation, modalType }) => {
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('overflow-hidden');
@@ -41,7 +42,7 @@ const Modal: React.FC<ModalProps> = ({ content, isOpen, onClose, navigation }) =
         ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}
       `}
       >
-        {navigation && <ModalNavigation />}
+        {navigation && <ModalNavigation navType={modalType} />}
         <div
           className='
           relative

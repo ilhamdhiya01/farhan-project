@@ -14,7 +14,7 @@ const Galery = () => {
   return (
     <div className='grid grid-cols-2 md:grid-cols-3  gap-2 md:gap-3'>
       {images.map((image, index) => (
-        <ImageGaleryItem key={index} image={image} />
+        <ImageGaleryItem key={index} index={index} image={image} />
       ))}
     </div>
   );
