@@ -4,8 +4,8 @@ export type Product = {
   slug: string;
   category: string;
   stock: number;
-  description?: string;
-  specification?: string;
+  description: string;
+  specification: string;
 };
 export const createSlug = (name: string) => {
   return name

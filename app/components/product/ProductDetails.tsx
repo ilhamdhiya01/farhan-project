@@ -11,7 +11,7 @@ import RelatedProducts from './RelatedProducts';
 import { useRouter } from 'next/navigation';
 
 type ProductDetailProps = {
-  product?: Product;
+  product: Product;
   indexProduct: number;
 };
 
@@ -21,7 +21,7 @@ type NavigationProps = {
   index: number;
 };
 
-const BreadCrumbs: React.FC<{ category?: string; slug?: string }> = ({ category, slug }) => (
+const BreadCrumbs: React.FC<{ category: string; slug: string }> = ({ category, slug }) => (
   <ul className='flex items-center gap-6'>
     <li className='uppercase font-semibold text-[#666666b2] relative after:content-[""] after:w-[0.5px] after:h-[15px] after:last:w-0 after:last:h-0 after:rotate-[28deg] after:bg-[#222222] after:absolute after:-right-3 after:top-1'>
       <Link href={`/`}>
@@ -59,7 +59,7 @@ const ProductDetails: React.FC<ProductDetailProps> = ({ product, indexProduct })
   const relatedProduct = products.filter((item) => item.category === navigationProduct?.category && item.slug !== navigationProduct?.slug);
 
   useEffect(() => {
-    const productIndex = products.find((item, index) => index === currentIndexProduct);
+    const productIndex = products.find((item, index) => index === currentIndexProduct) as Product;
     setNavigationProduct(productIndex);
     router.push(productIndex?.slug as string);
   }, [currentIndexProduct, navigationProduct, router]);
@@ -94,10 +94,10 @@ const ProductDetails: React.FC<ProductDetailProps> = ({ product, indexProduct })
               <Image src={navigationProduct?.image} alt='image-detail' width={500} height={500} className='object-cover w-full h-full' />
             </div>
             <div className='flex flex-col gap-2'>
-              <h2 className='text-2xl lg:text-3xl font-bold relative after:content-[""] after:block after:w-9 after:h-[3px] after:bg-gray-300 after:rounded-full after:my-2'>{navigationProduct?.name}</h2>
+              <h2 className='text-2xl lg:text-3xl font-bold relative after:content-[""] after:block after:w-9 after:h-[3px] after:bg-gray-300 after:rounded-full after:my-2'>{navigationProduct.name}</h2>
               <div className='uppercase text-xs lg:text-sm border-y py-2'>sku : dz-88</div>
               <div className='text-xs lg:text-sm'>
-                Categories : <a className='text-[#1e73be]'>{navigationProduct?.category}</a>
+                Categories : <a className='text-[#1e73be]'>{navigationProduct.category}</a>
               </div>
             </div>
           </div>
@@ -109,7 +109,7 @@ const ProductDetails: React.FC<ProductDetailProps> = ({ product, indexProduct })
             <div className='mt-5'>
               <h2 className='text-xl lg:text-2xl font-bold'>Spesifikasi :</h2>
               <div className='flex flex-col gap-2 text-sm lg:text-base mt-3'>
-                <ProductSpecification spec={navigationProduct?.specification} />
+                <ProductSpecification spec={navigationProduct.specification} />
               </div>
             </div>
           </div>
