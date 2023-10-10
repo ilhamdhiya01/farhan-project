@@ -11,7 +11,7 @@ import RelatedProducts from './RelatedProducts';
 import { useRouter } from 'next/navigation';
 
 type ProductDetailProps = {
-  product: Product | undefined;
+  product?: Product;
   indexProduct: number;
 };
 
@@ -21,7 +21,7 @@ type NavigationProps = {
   index: number;
 };
 
-const BreadCrumbs: React.FC<{ category: string | undefined; slug: string | undefined }> = ({ category, slug }) => (
+const BreadCrumbs: React.FC<{ category?: string; slug?: string }> = ({ category, slug }) => (
   <ul className='flex items-center gap-6'>
     <li className='uppercase font-semibold text-[#666666b2] relative after:content-[""] after:w-[0.5px] after:h-[15px] after:last:w-0 after:last:h-0 after:rotate-[28deg] after:bg-[#222222] after:absolute after:-right-3 after:top-1'>
       <Link href={`/`}>
@@ -62,7 +62,7 @@ const ProductDetails: React.FC<ProductDetailProps> = ({ product, indexProduct })
     const productIndex = products.find((item, index) => index === currentIndexProduct);
     setNavigationProduct(productIndex);
     router.push(productIndex?.slug as string);
-  }, [currentIndexProduct, navigationProduct]);
+  }, [currentIndexProduct, navigationProduct, router]);
 
   const handleNextNavigation = useCallback(() => {
     const maxIndex = products.length - 1;

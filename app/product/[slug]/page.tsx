@@ -5,7 +5,7 @@ type MetadataProps = {
   params: { slug: string };
 };
 
-export const generateMetadata = ({ params }: MetadataProps): { title: string | undefined } => {
+export const generateMetadata = ({ params }: MetadataProps): { title?: string } => {
   const slug = params.slug;
   const productTitle = products.find((item) => item.slug === slug)?.name;
   return {

@@ -5,7 +5,7 @@ import { useGaleryModal } from '@/app/hooks/useGaleryModal';
 import { products } from '@/app/data/products';
 import { useCallback, SyntheticEvent } from 'react';
 
-const ModalNavigation: React.FC<{ navType: string }> = ({ navType }) => {
+const ModalNavigation: React.FC<{ navType?: string }> = ({ navType }) => {
   const { imageIndex, setImageIndex } = useGaleryModal();
 
   const handleNextImage = useCallback(

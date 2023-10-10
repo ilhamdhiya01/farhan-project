@@ -7,7 +7,7 @@ type ModalProps = {
   isOpen: boolean;
   navigation?: boolean;
   closeButton?: boolean;
-  modalType: string;
+  modalType?: string;
   onClose: () => void;
 };
 

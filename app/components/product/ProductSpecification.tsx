@@ -1,6 +1,6 @@
 'use client';
 
-const ProductSpecification: React.FC<{ spec: string | undefined }> = ({ spec }) => {
+const ProductSpecification: React.FC<{ spec?: string }> = ({ spec }) => {
   const dataPairs = spec
     ?.trim()
     .split('|')
