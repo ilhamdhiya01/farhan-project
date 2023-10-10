@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Modal from './Modal';
 import { useGaleryModal } from '@/app/hooks/useGaleryModal';
 import { products } from '@/app/data/products';
-import { useCallback } from 'react';
 
 const GaleryOverviewModal = () => {
   const { isOpen, onClose, imageIndex, setImageIndex } = useGaleryModal();
