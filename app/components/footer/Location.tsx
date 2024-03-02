@@ -6,7 +6,7 @@ const Location = () => {
   return (
     <div className='text-white py-6'>
       <FooterLabel label='semarang office' />
-      <h2 className='font-semibold uppercase'>Jl. Maujen Sutoyo 6b Semarang Jawa Tengah</h2>
+      <h2 className='font-semibold uppercase'>Jl. Widuri Baru No 29 Rt 03/10 Bangetayu kulon, kota semarang</h2>
     </div>
   );
 };

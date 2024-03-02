@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
       </Container>
       <div>
-        <div className='uppercase text-center py-4 bg-gray-600 font-semibold text-gray-400 text-sm'>2023 | jaya agung mesin</div>
+        <div className='uppercase text-center py-4 bg-gray-600 font-semibold text-gray-400 text-sm'>2023 | CV. Cahya Vinture Indonesia mesin</div>
       </div>
     </footer>
   );
